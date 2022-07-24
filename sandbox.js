@@ -1,17 +1,25 @@
+// explicit types
+var character;
+var age;
+var isLoggedIn;
+age = 24;
+isLoggedIn = true;
 // arrays
-var names = ["luigi", "mario", "yoshi"];
-names.push("toad");
-var numbers = [10, 20, 30, 40];
-numbers.push(50);
-console.log(numbers);
-var mix = ["ken", 4, "chun-li", 8, 9, true];
-mix.push("ryu");
-mix.push(10);
+var ninjas = [];
+ninjas = ["yoshi", "mario"];
+// union types
+var mixed = [];
+mixed.push("hello");
+mixed.push(20);
+var uid;
+uid = "123";
+uid = 123;
 // objects
-var ninja = {
-    name: "mario",
-    belt: "black",
-    age: 24
+var ninjaObject;
+ninjaObject = { name: "yoshi", age: 30 };
+var ninjaTwo;
+ninjaTwo = {
+    name: "luigi",
+    age: 60,
+    beltColour: "black"
 };
-ninja.age = 60;
-ninja.name = "ryu";
