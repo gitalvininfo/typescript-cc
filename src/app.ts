@@ -1,3 +1,29 @@
+
+interface Person {
+    name: string;
+    age: number;
+    speak: (a: string) => void;
+    spend: (a: number) => number;
+}
+
+const me: Person = {
+    name: "Alvin",
+    age: 24,
+    speak: (text: string): void => {
+        console.log(text)
+    },
+    spend: (a: number): number => {
+        console.log(a)
+        return a;
+    },
+};
+
+const greetPerson = (person: Person) => {
+    console.log('hello ', person.name)
+}
+
+greetPerson(me);
+
 import { Invoice } from "./classes/Invoice.js";
 
 const inv1 = new Invoice('mario', 'work on the mario website', 100);
