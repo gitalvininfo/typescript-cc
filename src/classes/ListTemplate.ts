@@ -30,37 +30,28 @@ export class ListTemplate {
 }
 
 
-// GENERICS
-
-const addUID = <T extends object>(obj: T) => {
-    let uid = Math.floor(Math.random() * 100);
-
-    return { ...obj, uid }
+enum ResourceType {
+    BOOK, AUTHOR, FILM, DIRECTOR, PERSON
 }
-
-let docOne = addUID({ name: 'yoshi', age: 40 });
-
-
-console.log(docOne.uid);
-
 
 interface Resource<T> {
     uid: number;
-    resourceName: string;
+    resourceType: ResourceType;
     data: T
 }
 
 
-const docThree: Resource<object> = {
+
+const docOne: Resource<object> = {
     uid: 1,
-    resourceName: 'alvin',
+    resourceType: ResourceType.BOOK,
+    data: { title: "alvin" }
+}
+
+const docTwo: Resource<object> = {
+    uid: 2,
+    resourceType: ResourceType.AUTHOR,
     data: { name: "alvin" }
 }
 
-const docFour: Resource<string[]> = {
-    uid: 2,
-    resourceName: "shoppingList",
-    data: ["bread", "milk", "butter"]
-}
-
-console.log(docThree, docFour)
+console.log(docOne, docTwo)

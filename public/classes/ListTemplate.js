@@ -19,21 +19,22 @@ export class ListTemplate {
         }
     }
 }
-// GENERICS
-const addUID = (obj) => {
-    let uid = Math.floor(Math.random() * 100);
-    return Object.assign(Object.assign({}, obj), { uid });
-};
-let docOne = addUID({ name: 'yoshi', age: 40 });
-console.log(docOne.uid);
-const docThree = {
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+const docOne = {
     uid: 1,
-    resourceName: 'alvin',
+    resourceType: ResourceType.BOOK,
+    data: { title: "alvin" }
+};
+const docTwo = {
+    uid: 2,
+    resourceType: ResourceType.AUTHOR,
     data: { name: "alvin" }
 };
-const docFour = {
-    uid: 2,
-    resourceName: "shoppingList",
-    data: ["bread", "milk", "butter"]
-};
-console.log(docThree, docFour);
+console.log(docOne, docTwo);
