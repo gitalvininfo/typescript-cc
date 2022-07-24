@@ -1,6 +1,4 @@
 "use strict";
-// const anchor = document.querySelector("a")!;
-// console.log(anchor.href)
 var Invoice = /** @class */ (function () {
     function Invoice(client, details, amount) {
         this.client = client;
@@ -17,7 +15,9 @@ var inv2 = new Invoice('luigi', 'work on the luigi website', 300);
 var invoices = [];
 invoices.push(inv1);
 invoices.push(inv2);
-console.log(invoices);
+invoices.forEach(function (inv) {
+    console.log(inv.format());
+});
 var form = document.querySelector(".new-item-form");
 // inputs
 var type = document.querySelector("#type");
