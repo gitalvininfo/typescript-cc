@@ -10,7 +10,6 @@ export class ListTemplate {
     }
 
     render(item: HasFormatter, heading: string, pos: 'start' | 'end') {
-        console.log('***', item)
         const li = document.createElement("li");
 
         const h4 = document.createElement("h4");
@@ -30,28 +29,10 @@ export class ListTemplate {
 }
 
 
-enum ResourceType {
-    BOOK, AUTHOR, FILM, DIRECTOR, PERSON
-}
+let arr = ['ryu', 25, true];
 
-interface Resource<T> {
-    uid: number;
-    resourceType: ResourceType;
-    data: T
-}
+arr[0] = false;
+arr[1] = 'yoshi';
+arr = [30, false, 'yoshi'];
 
-
-
-const docOne: Resource<object> = {
-    uid: 1,
-    resourceType: ResourceType.BOOK,
-    data: { title: "alvin" }
-}
-
-const docTwo: Resource<object> = {
-    uid: 2,
-    resourceType: ResourceType.AUTHOR,
-    data: { name: "alvin" }
-}
-
-console.log(docOne, docTwo)
+console.log(arr)

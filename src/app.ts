@@ -19,7 +19,6 @@ const me: Person = {
 };
 
 const greetPerson = (person: Person) => {
-    console.log('hello ', person.name)
 }
 
 greetPerson(me);
@@ -41,9 +40,10 @@ let docs: HasFormatter[] = [];
 docs.push(docOne)
 docs.push(docTwo)
 
-console.log(docs)
-
-
+let tup: [string, number, boolean] = ['ryu', 20, true];
+tup[0] = 'ken';
+tup[1] = 50;
+tup[2] = true
 
 
 
@@ -79,10 +79,12 @@ form.addEventListener('submit', (e: Event) => {
 
     let doc: HasFormatter;
 
+    let values: [string, string, number] = [tofrom.value, details.value, amount.valueAsNumber]
+
     if (type.value === "invoice") {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     } else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
 
     list.render(doc, type.value, "end");

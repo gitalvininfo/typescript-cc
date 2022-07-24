@@ -10,7 +10,6 @@ const me = {
     },
 };
 const greetPerson = (person) => {
-    console.log('hello ', person.name);
 };
 greetPerson(me);
 import { Invoice } from "./classes/Invoice.js";
@@ -23,7 +22,10 @@ docTwo = new Payment("mario", "plumbing work", 200);
 let docs = [];
 docs.push(docOne);
 docs.push(docTwo);
-console.log(docs);
+let tup = ['ryu', 20, true];
+tup[0] = 'ken';
+tup[1] = 50;
+tup[2] = true;
 const form = document.querySelector(".new-item-form");
 const type = document.querySelector("#type");
 const tofrom = document.querySelector("#tofrom");
@@ -35,11 +37,12 @@ const list = new ListTemplate(ul);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let doc;
+    let values = [tofrom.value, details.value, amount.valueAsNumber];
     if (type.value === "invoice") {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
     list.render(doc, type.value, "end");
     console.log(doc);
