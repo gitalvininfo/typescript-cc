@@ -1,43 +1,29 @@
-// explicit types
-let character: string;
-let age: number;
-let isLoggedIn: boolean;
+let age: any = 24;
 
+age = true;
 
-age = 24;
+console.log(age);
 
+age = "hello";
 
-isLoggedIn = true;
+console.log(age);
 
+age = { name: "luigi" }
 
-// arrays
-let ninjas: string[] = [];
-ninjas = ["yoshi", "mario"];
+console.log(age);
 
+let mixed: any[] = [];
 
-// union types
-let mixed: (string | number)[] = [];
-mixed.push("hello");
-mixed.push(20);
+mixed.push(5);
+mixed.push("mario");
+mixed.push(false);
+console.log(mixed);
 
-let uid: string | number;
-uid = "123";
-uid = 123;
+let ninja: { name: any, age: any };
 
-
-
-// objects
-let ninjaObject: object;
-ninjaObject = { name: "yoshi", age: 30 };
-
-let ninjaTwo: {
-    name: string;
-    age: number;
-    beltColour: string
-};
-
-ninjaTwo = {
-    name: "luigi",
-    age: 60,
-    beltColour: "black"
+ninja = {
+    name: "yoshi",
+    age: 24
 }
+
+console.log(ninja)
