@@ -1,18 +1,4 @@
-class Invoice {
-    constructor(
-        private client: string,
-        private details: string,
-        private amount: number
-    ) {
-
-    }
-
-    format(): string {
-        return `${this.client} owes £ ${this.amount} for ${this.details}.`;
-    }
-
-}
-
+import { Invoice } from "./classes/Invoice.js";
 
 const inv1 = new Invoice('mario', 'work on the mario website', 100);
 const inv2 = new Invoice('luigi', 'work on the luigi website', 300);
@@ -24,9 +10,6 @@ invoices.push(inv2);
 invoices.forEach(inv => {
     console.log(inv.format());
 })
-
-
-
 
 
 
